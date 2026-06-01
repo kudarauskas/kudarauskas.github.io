@@ -141,7 +141,7 @@ details.entry:last-child {
 
 details.entry summary {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 0;
@@ -154,9 +154,21 @@ details.entry summary::-webkit-details-marker {
   display: none;
 }
 
+.entry-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
 .entry-title {
   font-weight: 500;
   font-size: 0.9rem;
+}
+
+.entry-role {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
 }
 
 .entry-meta {
