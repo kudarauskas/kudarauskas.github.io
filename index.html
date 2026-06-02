@@ -29,6 +29,8 @@
       <div class="about-row">
         <div class="about-text">
           <h1 class="about-name">Matas Kudarauskas</h1>
+          <p class="about-tagline">I do <span class="about-cycle-text"></span><span class="about-cursor">|</span></p>
+          <p class="about-static">I care about the real world.</p>
         </div>
         <div class="about-photo-frame">
           <img class="about-photo" src="assets/linkedin_black.jpg" alt="Matas Kudarauskas">
@@ -133,5 +135,29 @@
     &copy; 2026 Matas Kudarauskas
   </footer>
 
+  <script>
+    const words = ['math', 'statistics', 'data science', 'econometrics'];
+    const el = document.querySelector('.about-cycle-text');
+    let wordIndex = 0, charIndex = 0, deleting = false;
+
+    function type() {
+      const word = words[wordIndex];
+      charIndex += deleting ? -1 : 1;
+      el.textContent = word.slice(0, charIndex);
+
+      let delay = deleting ? 70 : 110;
+      if (!deleting && charIndex === word.length) {
+        delay = 1600;
+        deleting = true;
+      } else if (deleting && charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        delay = 350;
+      }
+      setTimeout(type, delay);
+    }
+
+    type();
+  </script>
 </body>
 </html>

@@ -154,6 +154,27 @@ section:last-of-type {
 }
 
 .about-tagline {
+  margin-top: 1.25rem;
+  color: var(--fg);
+}
+
+.about-cursor {
+  font-weight: 300;
+  margin-left: 1px;
+  animation: blink 0.7s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.about-static {
+  margin-top: 0.4rem;
+  color: var(--muted);
+}
+
+.about-tagline {
   color: var(--muted);
   margin-bottom: 1.25rem;
 }
