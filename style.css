@@ -283,7 +283,8 @@ details.entry summary::-webkit-details-marker {
 
 .project-desc {
   color: var(--muted);
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
 }
 
 .project-link {
