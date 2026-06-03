@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap');
+
+/* ─── Reset ─────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:      #0c0c0c;
+  --fg:      #f0f0eb;
+  --muted:   #555;
+  --border:  #1e1e1e;
+  --sans:    'Geist', ui-sans-serif, system-ui, sans-serif;
+  --mono:    'Geist Mono', ui-monospace, monospace;
+}
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Nav ───────────────────────────────────────────────── */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.wordmark {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg);
+  opacity: 0.6;
+}
+
+/* ─── Acts (sections) ───────────────────────────────────── */
+
+.act {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 2rem;
+}
+
+.act-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.act-inner.center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Labels ────────────────────────────────────────────── */
+
+.mono-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* ─── ACT 1: Hook ───────────────────────────────────────── */
+
+.act-hook {
+  position: relative;
+  min-height: 100vh;
+}
+
+.hook-line {
+  font-family: var(--sans);
+  font-size: clamp(1.8rem, 4.2vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  white-space: nowrap;
+  margin-top: 0;
+}
+
+.act-hook .act-inner {
+  max-width: 1100px;
+}
+
+.hook-dot {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hook-dot.visible {
+  opacity: 1;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.scroll-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50%       { transform: translateY(8px); opacity: 1; }
+}
+
+/* ─── ACT 2: Numbers ────────────────────────────────────── */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 3rem;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--sans);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--fg);
+}
+
+.stat-desc {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 180px;
+}
+
+.numbers-coda {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 560px;
+  margin-top: 1rem;
+}
+
+/* ─── ACT 3: Tagline ────────────────────────────────────── */
+
+.tagline {
+  font-family: var(--sans);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  margin-bottom: 2rem;
+}
+
+.tagline-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 440px;
+}
+
+/* ─── ACT 4–6: Shared section styles ───────────────────── */
+
+.section-heading {
+  font-family: var(--sans);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--fg);
+  margin-bottom: 1.5rem;
+}
+
+.section-body {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 3.5rem;
+}
+
+.section-body.narrow {
+  max-width: 480px;
+}
+
+/* ─── Blocker stat ──────────────────────────────────────── */
+
+.blocker-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.blocker-stat .stat-num {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  flex-shrink: 0;
+}
+
+.blocker-stat .stat-desc {
+  max-width: 380px;
+  text-align: left;
+}
+
+/* ─── Mechanism cards ───────────────────────────────────── */
+
+.mechanism-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.mechanism-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mech-anim {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  color: var(--fg);
+}
+
+.mech-peer { gap: 1.8rem; }
+
+
+.mech-incentive { gap: 1.8rem; align-items: center; }
+
+.incentive-chip { display: flex; align-items: center; gap: 0.6rem; }
+
+.mechanism-text h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--fg);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.mechanism-text p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ─── Why grid ──────────────────────────────────────────── */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 4rem;
+  margin-top: 3rem;
+}
+
+.why-item {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.why-item h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--fg);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.why-item p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ─── Steps ─────────────────────────────────────────────── */
+
+.steps {
+  list-style: none;
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 640px;
+}
+
+.steps li {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  align-items: flex-start;
+}
+
+.steps li:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.step-n {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  padding-top: 0.25rem;
+  flex-shrink: 0;
+  width: 1.5rem;
+}
+
+.steps strong {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--fg);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.steps p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ─── Closing ───────────────────────────────────────────── */
+
+.closing-heading {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.act-closing p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.email-link {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+
+.email-link:hover {
+  border-color: var(--fg);
+}
+
+/* ─── Footer ────────────────────────────────────────────── */
+
+footer {
+  padding: 2rem 2.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+/* ─── Scroll-pinned animation ───────────────────────────── */
+
+.anim-wrapper {
+  height: 400vh;
+  position: relative;
+}
+
+.anim-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg);
+}
+
+.anim-label {
+  margin-bottom: 2.5rem;
+  opacity: 1;
+  transform: none;
+}
+
+/*
+  Canvas is 640px wide. Phone is centered (left: 50%, transform: translate(-50%,-50%)).
+  Phone center = 320px from canvas left.
+
+  Chip (110px wide, r=55 center):
+    Scene 1 center: 320 + 180 + 55 = 555px  → translate(180px)
+    Scene 2 center: 320 + (-55) + 55 = 320px → translate(-55px) [into phone, scale down]
+    Scene 3 center: 320 + (-323) + 55 = 52px  → translate(-323px) [to charity]
+
+  Charity (44px wide, center=22px):
+    Left: 50% + translate(-342px) → canvas left = 320 - 342 = -22px + 22px center = 0px
+    Adjusted: translate(-298px) → canvas left = 320 - 298 = 22px, center = 22+22 = 44px
+    Keep charity at: translate(-300px) → center at 320-300+22 = 42px ≈ matches scene 3 chips
+*/
+
+/*
+  Layout (960px canvas, 4 scenes):
+  Phone  340×180  left:60px   → center x=230
+  Chip   170×170  left:395px  → center x=480 (canvas center)
+
+  Scene 1: chip hidden behind phone  → translateX(-250px) → center=230  (chip right=315 < phone right=400 ✓)
+  Scene 2: chip at center            → translateX(0)      → center=480
+  Scene 3: chip back into phone      → translateX(-250px) → center=230  (same as scene 1)
+  Scene 4: chip at charity           → translateX(+320px) → center=800
+  Charity label: left=715px width=170px (matches chip center 800 in scene 4)
+
+  Stripe fix: r=73, circumference=2π×73≈458.7px, 12 even segments → dasharray="19.11 19.11"
+*/
+
+.anim-wrapper { height: 400vh; }
+
+.anim-canvas {
+  position: relative;
+  width: 960px;
+  height: 360px;
+}
+
+/* Phone — left of center, rendered on top to occlude chip */
+.phone-wrap {
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--fg);
+  z-index: 2;
+}
+
+/* Chip — starts at canvas center */
+.chips-wrap {
+  position: absolute;
+  left: 395px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--fg);
+  z-index: 1;
+}
+
+.anim-stage[data-scene="1"] .chips-wrap { transform: translate(-380px, -50%); }
+.anim-stage[data-scene="2"] .chips-wrap { transform: translateY(-50%); }
+.anim-stage[data-scene="3"] .chips-wrap { transform: translate(-380px, -50%); }
+.anim-stage[data-scene="4"] .chips-wrap { transform: translate( 320px, -50%); }
+
+/* Charity label — far right, appears below chip in scene 4 */
+.charity-text {
+  position: absolute;
+  left: 715px;
+  width: 170px;
+  top: calc(50% + 97px);
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.5s ease 0.5s;
+  z-index: 0;
+}
+
+.anim-stage[data-scene="4"] .charity-text { opacity: 0.65; }
+
+/* Scene captions — swap below canvas on scene change */
+.scene-captions {
+  position: relative;
+  height: 1.4rem;
+  margin-top: 2.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.scene-caption {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.anim-stage[data-scene="1"] .scene-caption[data-for-scene="1"],
+.anim-stage[data-scene="2"] .scene-caption[data-for-scene="2"],
+.anim-stage[data-scene="3"] .scene-caption[data-for-scene="3"],
+.anim-stage[data-scene="4"] .scene-caption[data-for-scene="4"] {
+  opacity: 1;
+}
+
+/* ─── Reveal animations ─────────────────────────────────── */
+
+.reveal,
+.reveal-item {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.reveal.visible,
+.reveal-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  nav {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .act {
+    padding: 6rem 1.5rem;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Animation — scaled to ~0.375 of desktop (960→360px) */
+  .anim-canvas { width: 360px; height: 135px; }
+
+  .phone-wrap { left: 22px; }
+  .phone-wrap svg { width: 128px; height: 68px; }
+
+  .chips-wrap { left: 148px; }
+  .chips-wrap svg { width: 64px; height: 64px; }
+
+  .anim-stage[data-scene="1"] .chips-wrap { transform: translate(-94px, -50%); }
+  .anim-stage[data-scene="2"] .chips-wrap { transform: translateY(-50%); }
+  .anim-stage[data-scene="3"] .chips-wrap { transform: translate(-94px, -50%); }
+  .anim-stage[data-scene="4"] .chips-wrap { transform: translate(120px, -50%); }
+
+  .charity-text { left: 268px; width: 64px; top: calc(50% + 38px); font-size: 0.52rem; }
+
+  .mechanism-cards {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  footer {
+    padding: 1.5rem;
+  }
+}

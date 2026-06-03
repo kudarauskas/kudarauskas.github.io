@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>digitalcure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <span class="wordmark">digitalcure</span>
+  </nav>
+
+  <!-- ACT 1: Hook -->
+  <section class="act act-hook">
+    <div class="act-inner center">
+      <span class="mono-label reveal">2026</span>
+      <h1 class="hook-line reveal">Digital addiction is rampant.<span class="hook-dot" id="dot2" aria-hidden="true">.</span><span class="hook-dot" id="dot3" aria-hidden="true">.</span></h1>
+    </div>
+    <div class="scroll-hint reveal">
+      <span class="scroll-dot"></span>
+    </div>
+  </section>
+
+  <!-- ACT 2: The numbers -->
+  <section class="act act-numbers">
+    <div class="act-inner center">
+      <span class="mono-label reveal">The scale of it</span>
+      <div class="stat-grid reveal-group">
+        <div class="stat reveal-item">
+          <span class="stat-num" data-count="4.5" data-suffix="h" data-decimals="1">4.5h</span>
+          <span class="stat-desc">average daily screen time for adults</span>
+        </div>
+        <div class="stat reveal-item">
+          <span class="stat-num" data-count="31" data-suffix="h">31h</span>
+          <span class="stat-desc">on screens every week — more than a part-time job</span>
+        </div>
+        <div class="stat reveal-item">
+          <span class="stat-num" data-count="28" data-suffix="%">28%</span>
+          <span class="stat-desc">of all waking hours spent on a phone</span>
+        </div>
+      </div>
+      <p class="numbers-coda reveal">
+        Every app blocker has the same fatal flaw: you can turn it off.<br>
+        Friction isn't commitment. Friction is inconvenience with an off switch.
+      </p>
+    </div>
+  </section>
+
+  <!-- ACT 3: Tagline -->
+  <section class="act act-tagline">
+    <div class="act-inner center">
+      <h2 class="tagline reveal">Desperate times require<br>desperate measures.</h2>
+      <p class="tagline-sub reveal">Willpower isn't enough. Neither are app blockers.<br>You need real skin in the game.</p>
+    </div>
+  </section>
+
+  <!-- ACT 4: Animated bet lifecycle -->
+  <div class="anim-wrapper">
+    <div class="anim-stage" data-scene="1">
+
+      <span class="mono-label anim-label">The mechanism</span>
+
+      <div class="anim-canvas">
+
+        <!-- Charity label — right side, below chip position in scene 3 -->
+        <span class="charity-text">charity</span>
+
+        <!-- Chip — rendered below phone so phone can occlude it -->
+        <div class="chips-wrap">
+          <svg width="170" height="170" viewBox="-85 -85 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle r="83" stroke="currentColor" stroke-width="1.5"/>
+            <circle r="73" stroke="currentColor" stroke-width="18" stroke-dasharray="19.11 19.11" opacity="0.22"/>
+            <circle r="60" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          </svg>
+        </div>
+
+        <!-- Phone — rendered last (on top) so its fill occludes the chip -->
+        <div class="phone-wrap">
+          <svg width="400" height="220" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Opaque background — occludes chip sliding behind -->
+            <rect x="0" y="0" width="400" height="220" rx="26" style="fill: var(--bg)"/>
+            <!-- Body outline -->
+            <rect x="1.5" y="1.5" width="397" height="217" rx="26" stroke="currentColor" stroke-width="1.5"/>
+            <!-- Camera lens -->
+            <circle cx="22" cy="110" r="10" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            <!-- Home bar -->
+            <rect x="175" y="210" width="50" height="3.5" rx="1.75" fill="currentColor" opacity="0.18"/>
+          </svg>
+        </div>
+
+      </div><!-- /.anim-canvas -->
+
+      <!-- Captions (below canvas, swap on scene change) -->
+      <div class="scene-captions">
+        <p class="scene-caption" data-for-scene="1">Put a stake that you will not use certain apps for a certain time.</p>
+        <p class="scene-caption" data-for-scene="2">Your money is on the line.</p>
+        <p class="scene-caption" data-for-scene="3">If you keep your word, you get all of your money back.</p>
+        <p class="scene-caption" data-for-scene="4">If you fail, the money goes to digitalcure or a charity of your choice.</p>
+      </div>
+
+    </div><!-- /.anim-stage -->
+  </div><!-- /.anim-wrapper -->
+
+  <!-- ACT 5: Why it works -->
+  <section class="act act-why">
+    <div class="act-inner">
+      <span class="mono-label reveal">Why this works when nothing else does</span>
+      <p class="section-body reveal">Over 2 million people have downloaded dedicated screen blocker apps. The recognition that something needs to change is already there.</p>
+      <div class="why-item reveal">
+        <h4>Why screen blockers fail</h4>
+        <p>Opal, Screen Time, Focus Mode — they do add friction, and friction helps. But we are remarkably good at learning to overcome it. A few taps, a familiar override, and the blocker is gone. Without a real financial consequence on the line, the brain always finds a way through.</p>
+      </div>
+      <h3 class="section-heading reveal" style="margin-top: 3rem;">Loss aversion is a much more powerful force.</h3>
+    </div>
+  </section>
+
+  <!-- ACT 6: Two additional mechanisms -->
+  <section class="act act-mechanisms">
+    <div class="act-inner">
+      <h3 class="section-heading reveal">Two additional mechanisms.</h3>
+
+      <div class="mechanism-cards reveal-group">
+
+        <!-- Card 1: Peer accountability -->
+        <div class="mechanism-card reveal-item">
+          <div class="mech-anim mech-peer">
+            <!-- Phone A -->
+            <svg width="72" height="40" viewBox="0 0 72 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="72" height="40" rx="6" style="fill: var(--bg)"/>
+              <rect x="0.75" y="0.75" width="70.5" height="38.5" rx="6" stroke="currentColor" stroke-width="1"/>
+              <circle cx="7" cy="20" r="3" stroke="currentColor" stroke-width="0.75" opacity="0.45"/>
+              <rect x="28" y="36" width="16" height="1.5" rx="0.75" fill="currentColor" opacity="0.18"/>
+            </svg>
+            <!-- Chip between phones -->
+            <svg width="36" height="36" viewBox="-18 -18 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle r="17" stroke="currentColor" stroke-width="1"/>
+              <circle r="14.5" stroke="currentColor" stroke-width="5" stroke-dasharray="6.5 6.5" opacity="0.22"/>
+              <circle r="10" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
+            </svg>
+            <!-- Phone B (flipped to face Phone A) -->
+            <svg width="72" height="40" viewBox="0 0 72 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1)">
+              <rect x="0" y="0" width="72" height="40" rx="6" style="fill: var(--bg)"/>
+              <rect x="0.75" y="0.75" width="70.5" height="38.5" rx="6" stroke="currentColor" stroke-width="1"/>
+              <circle cx="7" cy="20" r="3" stroke="currentColor" stroke-width="0.75" opacity="0.45"/>
+              <rect x="28" y="36" width="16" height="1.5" rx="0.75" fill="currentColor" opacity="0.18"/>
+            </svg>
+          </div>
+          <div class="mechanism-text">
+            <h4>Peer accountability</h4>
+            <p>Place your stake and send a link to someone you care about. They download the app and commit to holding you to your word. Your money comes back only if you keep your terms — and now someone who matters is watching.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Subsidised reward -->
+        <div class="mechanism-card reveal-item">
+          <div class="mech-anim mech-incentive">
+            <!-- Phone -->
+            <svg width="72" height="40" viewBox="0 0 72 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="72" height="40" rx="6" style="fill: var(--bg)"/>
+              <rect x="0.75" y="0.75" width="70.5" height="38.5" rx="6" stroke="currentColor" stroke-width="1"/>
+              <circle cx="7" cy="20" r="3" stroke="currentColor" stroke-width="0.75" opacity="0.45"/>
+              <rect x="28" y="36" width="16" height="1.5" rx="0.75" fill="currentColor" opacity="0.18"/>
+            </svg>
+            <!-- Three chips -->
+            <div class="incentive-chip">
+              <svg width="36" height="36" viewBox="-18 -18 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle r="17" stroke="currentColor" stroke-width="1"/>
+                <circle r="14.5" stroke="currentColor" stroke-width="5" stroke-dasharray="6.5 6.5" opacity="0.22"/>
+                <circle r="10" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
+              </svg>
+              <svg width="36" height="36" viewBox="-18 -18 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle r="17" stroke="currentColor" stroke-width="1"/>
+                <circle r="14.5" stroke="currentColor" stroke-width="5" stroke-dasharray="6.5 6.5" opacity="0.22"/>
+                <circle r="10" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
+              </svg>
+              <svg width="36" height="36" viewBox="-18 -18 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle r="17" stroke="currentColor" stroke-width="1"/>
+                <circle r="14.5" stroke="currentColor" stroke-width="5" stroke-dasharray="6.5 6.5" opacity="0.22"/>
+                <circle r="10" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
+              </svg>
+            </div>
+          </div>
+          <div class="mechanism-text">
+            <h4>Subsidised reward</h4>
+            <p>For users who are especially struggling, digitalcure covers the entire stake. No contribution needed — just commit to the challenge. Keep your terms and the money is yours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 7: Closing -->
+  <section class="act act-closing">
+    <div class="act-inner center">
+      <span class="mono-label reveal">Coming soon</span>
+      <h3 class="closing-heading reveal">Coming soon to iOS.</h3>
+      <span class="mono-label reveal">Reach out</span>
+      <a class="email-link reveal" href="https://kudarauskas.github.io" target="_blank" rel="noopener">kudarauskas.github.io</a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="wordmark">digitalcure</span>
+    <span class="footer-copy">© 2026</span>
+  </footer>
+
+  <script>
+    // ── Reveal on scroll ──────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealGroups = document.querySelectorAll('.reveal-group');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    revealGroups.forEach(group => {
+      const items = group.querySelectorAll('.reveal-item');
+      const groupObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            items.forEach((item, i) => {
+              setTimeout(() => item.classList.add('visible'), i * 250);
+            });
+            groupObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      groupObserver.observe(group);
+    });
+
+    // ── Counter animation ─────────────────────────────────
+    function easeOutExpo(t) {
+      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    }
+
+    function animateCount(el) {
+      const to       = parseFloat(el.dataset.count);
+      const from     = el.dataset.from !== undefined ? parseFloat(el.dataset.from) : 0;
+      const prefix   = el.dataset.prefix  || '';
+      const suffix   = el.dataset.suffix  || '';
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+      const duration = 1800;
+      const start    = performance.now();
+
+      function tick(now) {
+        const elapsed  = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased    = easeOutExpo(progress);
+        const value    = from + (to - from) * eased;
+        el.textContent = prefix + value.toFixed(decimals) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    const countEls = document.querySelectorAll('[data-count]');
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    countEls.forEach(el => countObserver.observe(el));
+
+    // ── Scroll-pinned bet animation ───────────────────────
+    const animWrapper = document.querySelector('.anim-wrapper');
+    const animStage   = document.querySelector('.anim-stage');
+
+    function updateScene() {
+      if (!animWrapper) return;
+      const top   = animWrapper.getBoundingClientRect().top;
+      const total = animWrapper.offsetHeight - window.innerHeight;
+      const pct   = Math.max(0, Math.min(1, -top / total));
+      const scene = pct < 0.25 ? '1' : pct < 0.5 ? '2' : pct < 0.75 ? '3' : '4';
+      if (animStage.dataset.scene !== scene) animStage.dataset.scene = scene;
+    }
+
+    window.addEventListener('scroll', updateScene, { passive: true });
+    updateScene();
+
+    // ── Hook dots (appear as user scrolls past hook section) ──
+    const hookSection = document.querySelector('.act-hook');
+    const dot2 = document.getElementById('dot2');
+    const dot3 = document.getElementById('dot3');
+
+    function updateDots() {
+      const progress = window.scrollY / hookSection.offsetHeight;
+      dot2.classList.toggle('visible', progress > 0.1);
+      dot3.classList.toggle('visible', progress > 0.2);
+    }
+
+    window.addEventListener('scroll', updateDots, { passive: true });
+  </script>
+
+</body>
+</html>
